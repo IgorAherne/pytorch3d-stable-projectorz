@@ -1,5 +1,7 @@
 For integration with [StableProjectorz](https://stableprojectorz.com)
 
+<h1>Original Repo description:</h1>
+
 <img src="https://raw.githubusercontent.com/facebookresearch/pytorch3d/main/.github/pytorch3dlogo.png" width="900"/>
 
 [![CircleCI](https://circleci.com/gh/facebookresearch/pytorch3d.svg?style=svg)](https://circleci.com/gh/facebookresearch/pytorch3d)
