@@ -1,5 +1,7 @@
 For integration with [StableProjectorz](https://stableprojectorz.com)
 
+This is so avoid using nvdiffrast dependency
+
 <h1>Original Repo description:</h1>
 
 <img src="https://raw.githubusercontent.com/facebookresearch/pytorch3d/main/.github/pytorch3dlogo.png" width="900"/>
