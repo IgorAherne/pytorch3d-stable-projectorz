@@ -73,6 +73,20 @@ def get_extensions():
             "-D__CUDA_NO_HALF_CONVERSIONS__",
             "-D__CUDA_NO_HALF2_OPERATORS__",
         ]
+        nvcc_args.extend([
+            "-gencode=arch=compute_61,code=sm_61",  # GTX 1080
+            "-gencode=arch=compute_70,code=sm_70",  # V100
+            "-gencode=arch=compute_75,code=sm_75",  # RTX 2080
+            "-gencode=arch=compute_80,code=sm_80",  # A100
+            "-gencode=arch=compute_86,code=sm_86",  # RTX 3080
+            "-gencode=arch=compute_89,code=sm_89",  # RTX 4090
+            "-gencode=arch=compute_89,code=compute_89"  # Future compatibility
+        ])
+        if os.name == "nt":  # Windows
+            nvcc_args.extend([
+                "--compiler-options=/MD",
+                "/allow-unsupported-compiler"
+            ])
         if os.name != "nt":
             nvcc_args.append("-std=c++17")
         if cub_home is None:
