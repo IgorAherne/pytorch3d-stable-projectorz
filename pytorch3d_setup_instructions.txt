@@ -4,9 +4,11 @@ Python 3.11 cuda 11.8
 creave venv, activate venv
 
 $Env:CUDA_HOME="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8"
-$Env:CUB_HOME="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include\cub"
+$Env:CUB_HOME="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include\"
 
 $Env:PATH="$Env:PATH;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\bin\Hostx86\x64"
+
+$Env:CUDAHOSTCXX="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\bin\Hostx64\x64\cl.exe"
 
 
 & "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
