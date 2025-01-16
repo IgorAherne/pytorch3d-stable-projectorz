@@ -86,9 +86,13 @@ def get_extensions():
             # Remove std=c++17 for Windows as it's handled differently
             if "-std=c++17" in nvcc_args:
                 nvcc_args.remove("-std=c++17")
-            nvcc_args.extend([
+            # Use bundled CUB from CUDA toolkit for Windows
+            cub_home = os.path.join(CUDA_HOME, 'include', 'cub')
+            if os.path.exists(cub_home):
+                include_dirs.append(cub_home)
+            nvcc_args.extend([ 
                 "--allow-unsupported-compiler",  # For VS 2022 support
-                "--compiler-options=/MD"
+                "--compiler-options=/MD",
                 "--extended-lambda",  # Support for C++17 lambda features
                 "--expt-relaxed-constexpr",  # Relaxed constexpr rules
                 "--use_fast_math"  # Better performance
